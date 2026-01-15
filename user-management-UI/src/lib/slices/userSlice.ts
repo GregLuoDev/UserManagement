@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { createUser, deleteUser, fetchUsers, updateUser } from '../thunks/userAsyncThunks';
+import { createUser, fetchUsers } from '../thunks/userAsyncThunks';
 import { User } from '../types';
 
 type UserState = {
@@ -8,10 +8,7 @@ type UserState = {
   fetchingUsersError: string;
 
   currentUser: User | null;
-  isLoadingUser: boolean;
   isCreatingUser: boolean;
-  isUpdatingUser: boolean;
-  isDeletingUser: boolean;
   error: string;
 };
 
@@ -21,10 +18,7 @@ const initialState: UserState = {
   fetchingUsersError: '',
 
   currentUser: null,
-  isLoadingUser: false,
   isCreatingUser: false,
-  isUpdatingUser: false,
-  isDeletingUser: false,
   error: '',
 };
 
@@ -63,46 +57,12 @@ const userSlice = createSlice({
         state.error = '';
         state.users.push(action.payload);
       })
-      .addCase(createUser.rejected, (state, action) => {
+      .addCase(createUser.rejected, (state, action: any) => {
         state.isCreatingUser = false;
-        state.error = action.payload as string;
-      })
-
-      .addCase(updateUser.pending, (state) => {
-        state.isUpdatingUser = true;
-        state.error = '';
-      })
-      .addCase(updateUser.fulfilled, (state, action) => {
-        state.isUpdatingUser = false;
-        state.error = '';
-        state.users = state.users.map((user) => {
-          const newUser = action.payload;
-          if (user.id === newUser.id) {
-            return { ...user, ...newUser, updatedAt: new Date().toISOString() };
-          }
-          return user;
-        });
-      })
-      .addCase(updateUser.rejected, (state, action) => {
-        state.isUpdatingUser = false;
-        state.error = action.payload as string;
-      })
-
-      .addCase(deleteUser.pending, (state) => {
-        state.isDeletingUser = true;
-        state.error = '';
-      })
-      .addCase(deleteUser.fulfilled, (state, action) => {
-        state.isDeletingUser = false;
-        state.error = '';
-        state.users = state.users.filter((t) => {
-          const id = action.payload;
-          return t.id !== id;
-        });
-      })
-      .addCase(deleteUser.rejected, (state, action) => {
-        state.isDeletingUser = false;
-        state.error = action.payload as string;
+        const errorMessage = Object.entries(action.payload?.response?.data?.errors)
+          .map(([key, value]) => `${key}: ${(value as any).join(',')}`)
+          .join(' ');
+        state.error = errorMessage;
       });
   },
 });

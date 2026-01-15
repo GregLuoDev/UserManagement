@@ -1,15 +1,13 @@
-export type User = {
-  id: string;
-  title: string;
-  description: string;
-  status: number;
-  createdAt: string;
-  updatedAt: string;
+export type UserDTO = {
+  name: string;
+  age: number;
+  city: string;
+  state: string;
+  pincode: string;
 };
 
-export type UserDto = {
-  id?: string;
-  title: string;
-  description: string;
-  status: number;
+export type User = UserDTO & {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
 };

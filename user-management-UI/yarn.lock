@@ -1077,6 +1077,19 @@
     prop-types "^15.8.1"
     react-is "^19.2.3"
 
+"@mui/x-data-grid@^8.25.0":
+  version "8.25.0"
+  resolved "https://registry.yarnpkg.com/@mui/x-data-grid/-/x-data-grid-8.25.0.tgz#87f43e419b88767784fa69f79842b10894169a7c"
+  integrity sha512-Or17TXwjhJetgw374WAGjgGkoKqJZnqCZOXz3sc5/VqMhTf1EsfvglEy0AavbeE9PMceOp8MRdsuLiY8KLEXgQ==
+  dependencies:
+    "@babel/runtime" "^7.28.4"
+    "@mui/utils" "^7.3.5"
+    "@mui/x-internals" "8.25.0"
+    "@mui/x-virtualizer" "0.3.2"
+    clsx "^2.1.1"
+    prop-types "^15.8.1"
+    use-sync-external-store "^1.6.0"
+
 "@mui/x-date-pickers@^8.11.2":
   version "8.25.0"
   resolved "https://registry.yarnpkg.com/@mui/x-date-pickers/-/x-date-pickers-8.25.0.tgz#6e35a740969eeacf3f532e24ffd8960c761bdd10"
@@ -1099,6 +1112,15 @@
     "@mui/utils" "^7.3.5"
     reselect "^5.1.1"
     use-sync-external-store "^1.6.0"
+
+"@mui/x-virtualizer@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@mui/x-virtualizer/-/x-virtualizer-0.3.2.tgz#8f1273c847b803e75c8c2e3046cfcb26295774aa"
+  integrity sha512-5RkO+7OZRwlSnIlzlmBfuOsgRx4wtu11SP0gxtp43dVySZSl3iqjQ07YLRNeZrU1yLCxymJBuSP4IKxA8z9Yxg==
+  dependencies:
+    "@babel/runtime" "^7.28.4"
+    "@mui/utils" "^7.3.5"
+    "@mui/x-internals" "8.25.0"
 
 "@napi-rs/wasm-runtime@^0.2.11":
   version "0.2.12"

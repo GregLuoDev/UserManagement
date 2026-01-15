@@ -1,8 +1,5 @@
 import { useFormContext, Controller } from "react-hook-form";
 import { TextField, TextFieldProps } from "@mui/material";
-import { forwardRef } from "react";
-
-// ----------------------------------------------------------------------
 
 type Props = TextFieldProps & {
   name: string;
@@ -28,8 +25,9 @@ export function RHFTextField({ name, helperText, ...other }: Props) {
           error={!!error}
           helperText={helperText ?? error?.message}
           {...other}
-          sx={{ "& .MuiInputLabel-root": { top: "inherit", fontSize: "14px" } }}
+          sx={{ width: 200,  "& .MuiInputLabel-root": { top: "inherit", fontSize: "14px" } }}
           size="small"
+          className="mt-2! mb-2!"
         />
       )}
     />

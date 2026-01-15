@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { User, UserDto } from '../types';
+import { User, UserDTO } from '../types';
 
 const baseUrl = 'https://localhost:7086';
 
@@ -12,43 +12,20 @@ export const fetchUsers = createAsyncThunk('users', async (_, { rejectWithValue 
     }
     const data = await response.json();
     return data;
-  } catch (error) {
-    return rejectWithValue('Something went wrong');
+  } catch (err) {
+    return rejectWithValue(err);
   }
 });
 
-export const createUser = createAsyncThunk<User, UserDto>(
+export const createUser = createAsyncThunk<User, UserDTO>(
   'createUser',
   async (data, { rejectWithValue }) => {
     try {
       const response = await axios.post<User>(`${baseUrl}/api/users`, data);
       return response.data;
     } catch (err) {
-      return rejectWithValue('Something went wrong');
+      return rejectWithValue(err);
     }
   },
 );
 
-export const updateUser = createAsyncThunk<UserDto, UserDto>(
-  'updateUser',
-  async (data, { rejectWithValue }) => {
-    try {
-      await axios.put<User>(`${baseUrl}/api/users/${data.id}`, data);
-      return data;
-    } catch (err) {
-      return rejectWithValue('Something went wrong');
-    }
-  },
-);
-
-export const deleteUser = createAsyncThunk<string, string>(
-  'deleteUser',
-  async (id, { rejectWithValue }) => {
-    try {
-      await axios.delete<User>(`${baseUrl}/api/users/${id}`);
-      return id;
-    } catch (err) {
-      return rejectWithValue('Something went wrong');
-    }
-  },
-);
