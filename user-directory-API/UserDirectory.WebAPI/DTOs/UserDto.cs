@@ -1,7 +1,7 @@
-﻿using UserManagement.WebAPI.Models;
+﻿using UserDirectory.WebAPI.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace UserManagement.WebAPI.DTOs;
+namespace UserDirectory.WebAPI.DTOs;
 
 public class UserDto
 {

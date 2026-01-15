@@ -1,6 +1,6 @@
+import { useAppSelector } from '@/src/lib/store';
 import { Paper } from '@mui/material';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import { useAppSelector } from '@/src/lib/store';
 
 const columns: GridColDef[] = [
   { field: 'name', headerName: 'Name', width: 130 },
@@ -31,8 +31,7 @@ export function UsersList() {
   const { users } = useAppSelector((state) => state.user);
 
   return (
-    <Paper sx={{ height: 400, width: '100%' }}>
-      users:{users.length}
+    <Paper sx={{ height: 400, width: '100%' }} className="mt-4">
       <DataGrid
         rows={users}
         columns={columns}

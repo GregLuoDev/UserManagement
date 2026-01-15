@@ -1,7 +1,7 @@
-﻿using UserManagement.WebAPI.Models;
+﻿using UserDirectory.WebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace UserManagement.WebAPI.data;
+namespace UserDirectory.WebAPI.data;
 
 public class UserDbContext : DbContext
 {

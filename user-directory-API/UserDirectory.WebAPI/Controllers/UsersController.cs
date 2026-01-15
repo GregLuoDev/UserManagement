@@ -1,10 +1,10 @@
-﻿using UserManagement.WebAPI.DTOs;
-using UserManagement.WebAPI.Models;
+﻿using UserDirectory.WebAPI.DTOs;
+using UserDirectory.WebAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using UserManagement.WebAPI.data;
+using UserDirectory.WebAPI.data;
 
-namespace UserManagement.WebAPI.Controllers
+namespace UserDirectory.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

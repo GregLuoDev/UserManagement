@@ -15,15 +15,16 @@ export default function ListPage() {
   }, [dispatch]);
 
   return (
-    <div className="container mx-auto mt-4">
-      <div className="my-4">
+    <div className="container mx-auto mt-6">
+        <Typography variant="h4"> Users List</Typography>
+
         {isLoadingUsers && !fetchingUsersError && <CircularProgress />}
         {!isLoadingUsers && !!fetchingUsersError && (
           <Alert severity="error">Cannot fetch users. Please try again.</Alert>
         )}
 
         {!isLoadingUsers && !fetchingUsersError && <UsersList />}
-      </div>
+
     </div>
   );
 }

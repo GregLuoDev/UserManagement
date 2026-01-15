@@ -2,25 +2,22 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using UserManagement.WebAPI.data;
+using UserDirectory.WebAPI.data;
 
 #nullable disable
 
-namespace UserManagement.WebAPI.Migrations
+namespace UserDirectory.WebAPI.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20260115085102_InitialCreate")]
-    partial class InitialCreate
+    partial class UserDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.9");
 
-            modelBuilder.Entity("UserManagement.WebAPI.Models.User", b =>
+            modelBuilder.Entity("UserDirectory.WebAPI.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
