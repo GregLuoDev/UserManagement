@@ -1,8 +1,8 @@
-﻿using UserManagement.WebAPI.Database;
-using UserManagement.WebAPI.DTOs;
+﻿using UserManagement.WebAPI.DTOs;
 using UserManagement.WebAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using UserManagement.WebAPI.data;
 
 namespace UserManagement.WebAPI.Controllers
 {

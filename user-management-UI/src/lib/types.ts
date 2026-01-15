@@ -1,4 +1,4 @@
-export type Task = {
+export type User = {
   id: string;
   title: string;
   description: string;
@@ -7,7 +7,7 @@ export type Task = {
   updatedAt: string;
 };
 
-export type TaskDto = {
+export type UserDto = {
   id?: string;
   title: string;
   description: string;
