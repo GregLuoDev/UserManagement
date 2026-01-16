@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { User, UserDTO } from '../types';
 
-const baseUrl = 'https://localhost:7086';
+const baseUrl = 'http://localhost:8080';
 
 export const fetchUsers = createAsyncThunk('users', async (_, { rejectWithValue }) => {
   try {

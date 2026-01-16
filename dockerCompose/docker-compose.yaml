@@ -1,0 +1,26 @@
+version: "3"
+services:
+  api:
+    build:
+      context: ./user-directory-API
+    container_name: myapi  
+    image: myapi
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    networks:
+      - app-network      
+  ui:
+    build:
+      context: ./user-directory-UI
+    container_name: myui
+    image: myui
+    ports: 
+      - "3000:3000"    
+    depends_on:
+      - api
+    networks:
+      - app-network
