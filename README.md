@@ -16,7 +16,7 @@ Github repo: https://github.com/GregLuoDev/UserManagement
 ### Docker for UI
 - build docker image: docker build -t myui .  
 - run docker image:  docker run -p 3000:3000 myui
-![Containers](containers.png)
+![Containers](screenshots/containers.png)
 
 ### Docker-compose
 - run the application with docker-compose: docker-compose up
